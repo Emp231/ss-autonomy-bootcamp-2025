@@ -50,8 +50,8 @@ class DetectBlue:
         hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
         # Set upper and lower bounds for colour detection, this is in HSV
-        lower_blue = np.array([100,150,50])
-        upper_blue = np.array([140,255,255])
+        lower_blue = np.array([100, 150, 50])
+        upper_blue = np.array([140, 255, 255])
 
         # Apply the threshold for the colour detection
         mask = cv2.inRange(hsv, lower_blue, upper_blue)
@@ -71,7 +71,7 @@ class DetectBlue:
         cv2.imwrite(str(output_path), img)
 
         # Show res to see the result of what is being filtered in the colour detection
-        # cv2.imwrite(str(output_path), res)
+        cv2.imwrite(str(output_path), res)
 
         # This parameter is needed to run tests
         return mask if return_mask else None
@@ -116,11 +116,11 @@ class DetectRed:
         hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
         # Set upper and lower bounds for colour detection, this is in HSV
-        lower_red1 = np.array([0,150,50])
-        upper_red1 = np.array([10,255,255])
+        lower_red1 = np.array([0, 150, 50])
+        upper_red1 = np.array([10, 255, 255])
 
-        lower_red2 = np.array([160,150,50])
-        upper_red2 = np.array([179,255,255])
+        lower_red2 = np.array([160, 150, 50])
+        upper_red2 = np.array([179, 255, 255])
 
         # Apply the threshold for the colour detection
         mask1 = cv2.inRange(hsv, lower_red1, upper_red1)
@@ -143,7 +143,7 @@ class DetectRed:
         cv2.imwrite(str(output_path), img)
 
         # Show res to see the result of what is being filtered in the colour detection
-        # cv2.imwrite(str(output_path), res)
+        cv2.imwrite(str(output_path), res)
 
         # ============
         # ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
